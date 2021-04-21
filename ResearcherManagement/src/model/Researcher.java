@@ -22,7 +22,7 @@ public class Researcher {
 			 return con; 
 	 } 
 	
-	public String insertUser(String r_name, String r_surname, String r_email, String r_gender, String r_productType, String r_phoneNo) 
+	public String insertUsers(String r_name, String r_surname, String r_email, String r_gender, String r_productType, String r_phoneNo) 
 	 { 
 			 String output = ""; 
 			 try
@@ -90,26 +90,26 @@ public class Researcher {
 					 // iterate through the rows in the result set
 					 while (rs.next()) 
 					 { 
-							 String r_userID = Integer.toString(rs.getInt("userID")); 
-							 String r_name = rs.getString("name"); 
-							 String r_surname = rs.getString("surname"); 
-							 String r_email = rs.getString("email"); 
-							 String r_gender = rs.getString("gender"); 
-							 String r_productType = rs.getString("productType");  
-							 String r_phoneNumber = rs.getString("phoneNo"); 
+							 String userID = Integer.toString(rs.getInt("userID")); 
+							 String name = rs.getString("name"); 
+							 String surname = rs.getString("surname"); 
+							 String email = rs.getString("email"); 
+							 String gender = rs.getString("gender"); 
+							 String productType = rs.getString("productType");  
+							 String phoneNumber = rs.getString("phoneNo"); 
 							 
 							 // Add into the html table
-							 output += "<tr><td>" + r_name + "</td>"; 
-							 output += "<td>" + r_surname + "</td>"; 
-							 output += "<td>" + r_email + "</td>"; 
-							 output += "<td>" + r_gender + "</td>"; 
-							 output += "<td>" + r_productType + "</td>"; 
-							 output += "<td>" + r_phoneNumber + "</td>"; 
+							 output += "<tr><td>" + name + "</td>"; 
+							 output += "<td>" + surname + "</td>"; 
+							 output += "<td>" + email + "</td>"; 
+							 output += "<td>" + gender + "</td>"; 
+							 output += "<td>" + productType + "</td>"; 
+							 output += "<td>" + phoneNumber + "</td>"; 
 							 
 							 // buttons
 							 output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
 							 + "<td><form method='post' action='items.jsp'>"+ "<input name='btnRemove' type='submit' value='Remove'class='btn btn-danger'>"
-							 + "<input name='itemID' type='hidden' value='" + r_userID 
+							 + "<input name='itemID' type='hidden' value='" + userID 
 							 + "'>" + "</form></td></tr>"; 
 							 
 					 } 
@@ -168,7 +168,7 @@ public class Researcher {
 					 
 			 return output; 
 	 } 
-	public String deleteItem(String id) 
+	public String deleteUsers(String id) 
 	 { 
 			 String output = ""; 
 			 
