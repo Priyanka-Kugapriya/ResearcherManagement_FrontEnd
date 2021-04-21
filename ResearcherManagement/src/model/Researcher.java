@@ -168,7 +168,7 @@ public class Researcher {
 					 
 			 return output; 
 	 } 
-	public String deleteItem(String itemID) 
+	public String deleteItem(String id) 
 	 { 
 			 String output = ""; 
 			 
@@ -184,7 +184,7 @@ public class Researcher {
 					 PreparedStatement preparedStmt = con.prepareStatement(query); 
 					 
 					 // binding values
-					 preparedStmt.setInt(1, Integer.parseInt(itemID)); 
+					 preparedStmt.setString(1, id); 
 					 
 					 // execute the statement
 					 preparedStmt.execute(); 
