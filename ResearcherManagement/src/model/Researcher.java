@@ -165,7 +165,7 @@ public class Researcher {
 					 
 					 
 					 // create a prepared statement
-					 String query = "UPDATE researcher SET name=?,surname=?,email=?,gender=?,productType=?,productID=?,phoneNo=?WHERE userID=?";
+					 String query = "UPDATE researcher SET name=?,surname=?,email=?,gender=?,productType=?,productID=?,phoneNo=? WHERE userID=?";
 					 
 					 
 					 PreparedStatement preparedStmt = con.prepareStatement(query); 
