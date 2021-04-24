@@ -22,7 +22,6 @@ public class ResearcherService {
 	
 	//Reading Researcher details
 	
-	
 	@GET
 	@Path("/") 
 	@Produces(MediaType.TEXT_HTML) 
@@ -37,16 +36,17 @@ public class ResearcherService {
 	@Path("/") 
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED) 
 	@Produces(MediaType.TEXT_PLAIN) 
-	public String insertUser(@FormParam("name") String name, 
+	public String insertUsers(@FormParam("name") String name, 
 			 @FormParam("surname") String surname, 
 			 @FormParam("email") String email,
 			 @FormParam("gender") String gender,
 			 @FormParam("productType") String productType,
+			 @FormParam("productID") String productID,
 			 @FormParam("phoneNo") String phoneNo
 			 )
 			  
 	{ 
-		String output = researcherObj.insertUsers(name, surname, email, gender, productType,phoneNo); 
+		String output = researcherObj.insertUsers(name, surname, email, gender, productType,productID,phoneNo); 
 		return output; 
 	}
 	
@@ -56,28 +56,29 @@ public class ResearcherService {
 	
 	//Updating Researcher Details
 	
-//	@PUT
-//	@Path("/") 
-//	@Consumes(MediaType.APPLICATION_JSON) 
-//	@Produces(MediaType.TEXT_PLAIN) 
-//	public String updateUsers(String researcherData) 
-//	{ 
-//		//Convert the input string to a JSON object 
-//		JsonObject researcherObj = new JsonParser().parse(researcherData).getAsJsonObject(); 
-//		
-//		//Read the values from the JSON object
-//		String userID = researcherObj.get("userID").getAsString(); 
-//		String name = researcherObj.get("name").getAsString(); 
-//		String surname = researcherObj.get("surname").getAsString(); 
-//		String email = researcherObj.get("email").getAsString(); 
-//		String gender = researcherObj.get("gender").getAsString();
-//		String productType = researcherObj.get("productType").getAsString();
-//		String phoneNo = researcherObj.get("phoneNo").getAsString();
-//		
-//		String output = researcherObj.updateUsers(userID, name, surname, email, gender, productType, phoneNo); 
-//	
-//		return output; 
-//	}
+	@PUT
+	@Path("/") 
+	@Consumes(MediaType.APPLICATION_JSON) 
+	@Produces(MediaType.TEXT_PLAIN) 
+	public String updateUsers(String researcherData) 
+	{ 
+		//Convert the input string to a JSON object 
+		JsonObject researcherObject = new JsonParser().parse(researcherData).getAsJsonObject(); 
+		
+		//Read the values from the JSON object
+		String userID = researcherObject.get("userID").getAsString(); 
+		String name = researcherObject.get("name").getAsString(); 
+		String surname = researcherObject.get("surname").getAsString(); 
+		String email = researcherObject.get("email").getAsString(); 
+		String gender = researcherObject.get("gender").getAsString();
+		String productType = researcherObject.get("productType").getAsString();
+		String productID = researcherObject.get("productID").getAsString();
+		String phoneNo = researcherObject.get("phoneNo").getAsString();
+		
+		String output = researcherObj.updateUsers(userID, name, surname, email, gender, productType, productID, phoneNo); 
+	
+		return output; 
+	}
 	
 
 	
