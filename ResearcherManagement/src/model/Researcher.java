@@ -58,7 +58,7 @@ public class Researcher {
 					 preparedStmt.execute(); 
 					 con.close(); 
 					 
-					 output = "Inserted successfully"; 
+					 output = "Researcher details Inserted successfully"; 
 			 } 
 			 catch (Exception e) 
 			 { 
@@ -186,7 +186,7 @@ public class Researcher {
 					 preparedStmt.execute(); 
 					 con.close(); 
 					 
-					 output = "Updated successfully"; 
+					 output = "Updated researcher details successfully"; 
 			 } 
 			 catch (Exception e) 
 			 { 
@@ -222,7 +222,7 @@ public class Researcher {
 					 preparedStmt.execute(); 
 					 con.close(); 
 					 
-					 output = "Deleted successfully"; 
+					 output = "Deleted researcher details successfully"; 
 			 } 
 			 catch (Exception e) 
 			 { 
